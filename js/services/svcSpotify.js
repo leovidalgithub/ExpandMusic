@@ -5,6 +5,7 @@ angular.module('moduleServices') 		// SPOTIFY API SERVICE
 			var httpProtocol = $rootScope.getHttpProtocol();
 			var urlApi = httpProtocol + '//api.spotify.com/v1/search?q=<%TRACK%>&type=track';
 			urlApi = urlApi.replace('<%TRACK%>', encodeURIComponent( songName ) );
+
 			return $http.get( urlApi )
 				.then( function( data ) {
 					return { 

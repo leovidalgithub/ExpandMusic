@@ -18,22 +18,25 @@ angular.module( 'moduleControllers' )
 
 			$( data ).each( function( index, el ) {
 				var itemInfo = el.trackInfo;
-				var duration = new Date(itemInfo.duration_ms);
-				duration = duration.getUTCMinutes() + ':' + duration.getUTCSeconds();
+				if ( itemInfo ) { // si no llega nada porque no consiguó la canción no lo agrego al array
 
-				$scope.masterInfo.push( {
-					trackName: itemInfo.name,
-					trackId: itemInfo.id,
-					trackPreview: itemInfo.preview_url,
-					trackDuration: duration,
-					trackSpotify: itemInfo.external_urls.spotify,
-					albumId: itemInfo.album.id,
-					albumName: itemInfo.album.name,
-					albumCover: itemInfo.album.images[1].url,
-					artistName: itemInfo.artists[0].name,
-					artistId: itemInfo.artists[0].id,
-					artistSpotify: itemInfo.artists[0].external_urls.spotify
-				} );
+					var duration = new Date(itemInfo.duration_ms);
+					duration = duration.getUTCMinutes() + ':' + duration.getUTCSeconds();
+
+					$scope.masterInfo.push( {
+						trackName: itemInfo.name,
+						trackId: itemInfo.id,
+						trackPreview: itemInfo.preview_url,
+						trackDuration: duration,
+						trackSpotify: itemInfo.external_urls.spotify,
+						albumId: itemInfo.album.id,
+						albumName: itemInfo.album.name,
+						albumCover: itemInfo.album.images[1].url,
+						artistName: itemInfo.artists[0].name,
+						artistId: itemInfo.artists[0].id,
+						artistSpotify: itemInfo.artists[0].external_urls.spotify
+					} );
+				}
 			});
 			getAlbumTracks();			
 		} // @end fillMasterTracksInfo()
