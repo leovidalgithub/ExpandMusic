@@ -1,0 +1,26 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+/* TEAM */
+
+    Web developers:
+    Leonardo Rdgz. Vidal | _leo@leovidal.es_
+    Ana Gamito | _imaginarte@gmail.com_
+    Angel San Nicolás | _angel.sannicolas@gmail.com_                            
+
+    From: 
+    Barcelona, Spain.
+  
+                        
+/* THANKS */
+
+    Skylab Team (http://www.skylabcoders.com/)                            
+
+
+/* TECHNOLOGY COLOPHON */
+
+    HTML5, CSS3, ANGULAR JS, JQUERY, BOOSTRAP, GIT
+    API SPOTIFY, API LAST FM, API LYRICSNMUSIC
+    
+
+    Last update: 2016/07/29

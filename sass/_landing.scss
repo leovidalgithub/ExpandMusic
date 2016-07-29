@@ -1,0 +1,45 @@
+/* LANDING ZONE*/
+  #landing {
+      background-color: black;
+      color: white;
+      width: 90%;
+      margin: 50px auto;
+      margin-bottom: 0;
+      padding: 15px 90px;
+      border-radius: 8px;
+      font-size: 24px;
+      h1, #files {  // 
+        display: none;   
+      }
+      img {
+        margin: 0 auto;
+        width: 330px;
+      }
+      #cta {
+        margin-top: 70px;
+        text-align: center;
+        label {
+        font-size: 22px;
+        }
+      }
+      label {
+        background-color: #09BB0D;
+        width: 150px;
+        border-radius: 20px;
+        margin: 0 auto;
+        padding: 7px 20px 5px 20px;
+        letter-spacing: 4px;
+        font-weight: bold;
+        &:hover {
+          background-color: #8CE931;
+          color: #DCDCDC;
+          
+        }
+      }
+      button {
+        font-size: 21px;
+        &:hover {
+          color: #FF4B4B;
+          }
+      }
+  } // #landing

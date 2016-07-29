@@ -1,0 +1,80 @@
+<div ng-controller="mainCtrl">
+
+	<div id="backImg" style="background-image: url('{{masterInfo[arrayIndex].artistCover}}');">
+</div>
+
+	<div id="header">
+		<div class="headerLogo">
+			<img src="../assets/imgs/logoExpandYourMusic.png" width="250px">
+		</div>
+
+		<!-- TRACKS SELECT -->
+		<div id="tracksSelect">
+			  <form role="form">
+			    <div class="form-group">
+			      <label for="sel1">Selected audio files:</label>
+			      <select name="repeatSelect" ng-model="arrayIndex" class="form-control">
+		 				<option ng-selected="{{key == arrayIndex}}" ng-repeat="(key, value) in masterInfo" value="{{key}}">{{value.trackName}}</option>
+			      </select>
+			      <br>
+			    </div>
+			  </form>
+		</div>
+
+		<div class="headerFolderIcon">
+			<!-- <button ng-click="goLanding()"><img src="../assets/imgs/folder.png" width="25px"></button> -->
+			<button class="btn btn-primary" ng-click="goLanding()">Home <-</button>
+		</div>
+	</div>
+	
+	<!-- PREGUNTAR A JUANME LA PESADILLA DEL CACHÉ DEL NG-INCLUDE -->
+	<!-- <div id="carrusel" ng-include="'templates/carrusel.html'"></div> -->
+	<!-- HTML5 player. Ya aparece a URL pero sigue sin funcionar. -->
+	<!-- obtener el path de los archivos locales -->
+
+	<div id="player">
+
+			<!-- ALBUM COVER -->
+			<div class="box" style="background-image: url('{{masterInfo[arrayIndex].albumCover}}');" class="album controlWindow" ng-controller="albumCtrl">
+				<!-- <h4>{{masterInfo[arrayIndex].albumName}}</h4> -->
+			</div>
+	
+			<!-- HTML5 AUDIO PLAYER -->
+			<audio controls>
+			 	<!-- <source src="{{masterInfo[arrayIndex].trackPreview}}" type="audio/ogg"> -->
+			 	<!-- <source src="{{masterInfo[arrayIndex].trackPreview}}" type="audio/mpeg"> -->
+			 	<source src="C:\fakepath\Nothing else matters.mp3" type="audio/ogg">
+			 	<source src="C:\fakepath\Nothing else matters.mp3" type="audio/mpeg">
+				Your browser does not support the audio element.
+			</audio>
+
+			<!-- TRACK INFO -->
+			<div id="trackInfo" class="box controlWindow" ng-controller="songInfoCtrl">
+				<h4><span>{{masterInfo[arrayIndex].trackName}}</span></h4>
+				<p><span>Duration: </span>{{masterInfo[arrayIndex].trackDuration}} min</p>
+				<p><span>Genre: </span>{{masterInfo[arrayIndex].style}}</p>
+				<!-- <p>{{ songHistory }}</p> -->
+			</div>
+			
+			<!-- ARTIST INFO -->
+			<div class="box scroll controlWindow" ng-controller="artistCtrl">
+				<h4><span>{{masterInfo[arrayIndex].artistName}}</span></h4>
+				<p>{{masterInfo[arrayIndex].summary}}</p>
+			</div>
+			
+ 		<!-- ALBUM TRACKS -->		
+			<div class="box scroll controlWindow" ng-controller="controlsCtrl">
+				<h4><span>Album Tracks</span></h4>
+				<ul>
+					<li ng-repeat="(key, value) in masterInfo[arrayIndex].albumTracks">{{value}}</li>
+				</ul>
+			</div>
+
+			<!-- LYRICS -->
+			<div class="box scroll controlWindow" ng-controller="lyricsCtrl">
+				<h4><span>Lyrics</span></h4>
+				<p>{{ masterInfo[arrayIndex].lyrics }}</p>
+			</div>
+
+	</div>
+</div>

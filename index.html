@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appExpMusic">
+<head>
+	<meta charset="UTF-8">
+	<meta name=description content="Angular Webapp to search extra info about songs' user." />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+<!-- para evitar el cacheo de Chrome al utiliar ng-include -->
+<!-- de todas maneras no funciona -->
+	<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+	<meta http-equiv="CACHE-CONTROL" content="NO-STORE">
+
+	<title>Expand Your Music</title>
+	<link rel="shortcut icon" href=assets/imgs/favicon.png>
+	<link type=text/plain rel=author href=assets/humans.txt>
+	<link href='https://fonts.googleapis.com/css?family=Catamaran:400,200,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="libs/css/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+	<!--  MAIN -->
+	<main>
+		<div class="myContainer">	
+			<!-- <div ng-include="'templates/header.html'"></div> Chrome no refresca --> 
+			<div ng-view></div>
+		</div>
+	</main>
+
+<!-- LIBS -->
+<script src="libs/js/angular.js"></script>	
+<script src="libs/js/angular-route.js"></script>
+<script src="libs/js/jquery.js"></script>
+<script src="libs/js/bootstrap.min.js"></script>
+<!-- MODULES -->
+<script src="js/app.js"></script>
+<script src="js/moduleControllers.js"></script>
+<script src="js/moduleServices.js"></script>
+<!-- CONFIG - ROUTING - $sceDelegateProvider.resourceUrlWhitelist -->
+<script src="js/config/appRouting.js"></script>
+<!-- CONTROLLERS -->
+<script src="js/controllers/ctrLanding.js"></script>
+<script src="js/controllers/ctrGetMasterInfo.js"></script>
+<script src="js/controllers/ctrShowData.js"></script>
+<!-- SERVICES -->
+<script src="js/services/svcSpotify.js"></script>
+<script src="js/services/svcLyrics.js"></script>
+<script src="js/services/svcLastFM.js"></script>
+
+</body>
+</html>
